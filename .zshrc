@@ -8,5 +8,10 @@ source $ZSH/oh-my-zsh.sh
 
 [[ -f /home/pengu/.dart-cli-completion/zsh-config.zsh ]] && . /home/pengu/.dart-cli-completion/zsh-config.zsh || true
 
-# TODO: add world of tanks script
-# TODO: Add install script to set permissions for world of tanks script
+update_wot_mods() {
+    if [ -f "$HOME/.world-of-tanks/update-mods.sh" ]; then
+        bash "$HOME/.world-of-tanks/update-mods.sh"
+    else
+        echo "⚠️  WoT mods update script not found at $HOME/.world-of-tanks/update-mods.sh"
+    fi
+}
